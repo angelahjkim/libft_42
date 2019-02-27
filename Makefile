@@ -6,15 +6,13 @@
 #    By: angkim <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/02/26 16:55:03 by angkim           ###   ########.fr        #
+#    Updated: 2019/02/26 17:00:21 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CFLAGS = -Wall -Werror -Wextra
-
-#INCS = libft.h
 
 SRCS = ft_memset.c \
 	   ft_bzero.c \
@@ -79,7 +77,7 @@ all: $(NAME)
 	@echo "Build libft.a"
 
 clean:
-	rm *.o 
+	rm -f $(OBJS) 
 
 fclean: clean
 	rm $(NAME)
