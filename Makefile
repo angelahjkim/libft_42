@@ -6,14 +6,16 @@
 #    By: angkim <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/02/26 16:06:15 by angkim           ###   ########.fr        #
+#    Updated: 2019/02/26 16:55:03 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libft.a
+
 CFLAGS = -Wall -Werror -Wextra
 
-NAME = libft.a
-INCS = libft.h
+#INCS = libft.h
+
 SRCS = ft_memset.c \
 	   ft_bzero.c \
 	   ft_memcpy.c \
@@ -65,15 +67,16 @@ SRCS = ft_memset.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c
-OJBS = $(SRCS:%.c=%.o)
+
+OBJS = $(SRCS:%.c=%.o)
+ 
+$(NAME):
+	gcc $(CFLAGS) -c $(SRCS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 all: $(NAME)
 	@echo "Build libft.a"
-
-$(NAME):
-	gcc $(CFLAGS) -c $(SRCS) -I$(INCS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
 
 clean:
 	rm *.o 
