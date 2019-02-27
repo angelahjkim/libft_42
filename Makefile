@@ -6,7 +6,7 @@
 #    By: angkim <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/02/26 15:41:51 by angkim           ###   ########.fr        #
+#    Updated: 2019/02/26 16:06:15 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,14 +65,14 @@ SRCS = ft_memset.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c
-# OJBS = $(SRCS:%.c=%.o)
+OJBS = $(SRCS:%.c=%.o)
 
 all: $(NAME)
 	@echo "Build libft.a"
 
 $(NAME):
 	gcc $(CFLAGS) -c $(SRCS) -I$(INCS)
-	ar rc $(NAME) $(SRCS:%.c=%.o)
+	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 clean:
