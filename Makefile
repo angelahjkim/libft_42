@@ -6,7 +6,7 @@
 #    By: angkim <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/03/04 19:58:43 by angkim           ###   ########.fr        #
+#    Updated: 2019/03/05 15:53:37 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,9 +74,7 @@ SRCS = ft_memset.c \
 
 OBJS = $(SRCS:%.c=%.o)
 
-all: $(NAME)
-
-$(NAME):
+all:
 	gcc $(CFLAGS) -c $(SRCS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
