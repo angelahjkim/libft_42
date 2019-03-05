@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 14:41:50 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 11:32:08 by angkim           ###   ########.fr       */
+/*   Created: 2019/03/04 16:52:15 by angkim            #+#    #+#             */
+/*   Updated: 2019/03/04 19:54:04 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
-** takes the address of string as a parameter and frees the memory of the string
-** then sets it ptr to NULL
+** function that takes a string and returns the number or words it contains
+** word defined as characters delimited by the parameter char c
 */
 
-void	ft_strdel(char **as)
+int		ft_wordcount(char const *s, char c)
 {
-	if (as)
+	int count;
+
+	count = 0;
+	while (s && *s)
 	{
-		free(*as);
-		*as = 0;
+		if (*s != c)
+		{
+			count++;
+			while (*s != c)
+				s++;
+		}
+		s++;
 	}
+	return (count);
 }

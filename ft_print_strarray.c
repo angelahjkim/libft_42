@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_print_strarray.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 14:41:50 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 11:32:08 by angkim           ###   ########.fr       */
+/*   Created: 2019/03/04 17:39:41 by angkim            #+#    #+#             */
+/*   Updated: 2019/03/04 17:41:38 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** takes the address of string as a parameter and frees the memory of the string
-** then sets it ptr to NULL
+** takes a string array and its length as arguments and prints each string
+** followed by a newline character to stdout
 */
 
-void	ft_strdel(char **as)
+void	ft_print_strarray(char **array, int len)
 {
-	if (as)
+	int i;
+
+	i = 0;
+	while (array && i < len)
 	{
-		free(*as);
-		*as = 0;
+		ft_putstr((char const *)array[i]);
+		ft_putchar('\n');
+		i++;
 	}
 }

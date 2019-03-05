@@ -6,7 +6,7 @@
 #    By: angkim <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/02/26 17:00:21 by angkim           ###   ########.fr        #
+#    Updated: 2019/03/04 19:58:43 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRCS = ft_memset.c \
 	   ft_strjoin.c \
 	   ft_strtrim.c \
 	   ft_strsplit.c \
+	   ft_itoa.c \
 	   ft_putchar.c \
 	   ft_putstr.c \
 	   ft_putendl.c \
@@ -64,17 +65,21 @@ SRCS = ft_memset.c \
 	   ft_putchar_fd.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
-	   ft_putnbr_fd.c
+	   ft_putnbr_fd.c \
+	   ft_wordcount.c \
+	   ft_memalloc_newarray.c \
+	   ft_memalloc_strarray.c \
+	   ft_strfill.c \
+	   ft_print_strarray.c
 
 OBJS = $(SRCS:%.c=%.o)
- 
+
+all: $(NAME)
+
 $(NAME):
 	gcc $(CFLAGS) -c $(SRCS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
-
-all: $(NAME)
-	@echo "Build libft.a"
 
 clean:
 	rm -f $(OBJS) 

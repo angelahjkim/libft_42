@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 23:40:29 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/24 21:20:45 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 20:01:47 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,76 +19,89 @@
 
 static int	word_count(char const *s, char c)
 {
-	int i;
 	int count;
 
-	i = 0;
 	count = 0;
-	while (s[i])
+	while (s && *s)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != c && s[i] != '\0')
+		if (*s != c)
+		{
 			count++;
-		while (s[i] != c && s[i] != '\0')
-			i++;
+			while (*s != c)
+				s++;
+		}
+		s++;
 	}
 	return (count);
 }
 
-static char	**fill_strarr(char **str_arr, int pos, char const *s, int st, int e)
+static char *fill_strarray(char *array, const char *s, int start, int end)
 {
 	int i;
 
-	str_arr[pos] = (char *)malloc(sizeof(char) * (e - st) + 1);
 	i = 0;
-	while (st < e)
+	while (start < end)
 	{
-		str_arr[pos][i] = s[st];
+		array[i] = s[start];
 		i++;
-		st++;
+		start++;
 	}
-	str_arr[pos][i] = '\0';
-	return (str_arr);
-}
-
-static char	**new_array(char **array, char const *s, char c)
-{
-	int word_cnt;
-
-	word_cnt = word_count(s, c);
-	array = (char **)malloc(sizeof(char *) * word_cnt);
+	array[i] = '\0';
 	return (array);
 }
 
-char		**ft_strsplit(char const *s, char c)
+static char	**make_strarray(char **array, const char *s, char c)
 {
-	char	**word_arr;
-	int		start;
-	int		end;
-	int		i;
-	int		j;
+	int i;
+	int j;
+	int start;
+	int end;
 
-	word_arr = NULL;
-	word_arr = new_array(word_arr, s, c);
 	i = 0;
 	j = 0;
 	while (s[i] && j < word_count(s, c))
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != c && s[i] != '\0')
+		if (s[i] != c)
 		{
 			start = i;
 			end = i;
 		}
-		while (s[i] != c && s[i] != '\0')
+		while (s[i] != c && s[i])
 		{
 			i++;
 			end++;
 		}
-		word_arr = fill_strarr(word_arr, j, s, start, end);
+		array[j] = (char *)malloc(sizeof(char) * (end - start) + 1);
+		if (array[j])
+			array[j] = fill_strarray(array[j], s, start, end);
 		j++;
 	}
-	return (word_arr);
+	return (array);
+}
+
+static char	**new_array(char **array, char const *s, char c)
+{
+	int words;
+
+	words = word_count(s, c);
+	array = (char **)malloc(sizeof(char *) * words);
+	if (array)
+		return (array);
+	return (0);
+}
+
+char		**ft_strsplit(char const *s, char c)
+{
+	char	**word_arr;
+
+	word_arr = NULL;
+	word_arr = new_array(word_arr, s, c);
+	if (word_arr && s)
+	{
+		word_arr = make_strarray(word_arr, s, c);
+		return (word_arr);
+	}
+	return (0);
 }

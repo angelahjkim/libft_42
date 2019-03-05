@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 21:42:36 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/23 22:52:22 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 15:42:41 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,33 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char			*cat_str;
-	unsigned int	s1_len;
-	unsigned int	s2_len;
 	unsigned int	total_len;
 	unsigned int	i;
+	unsigned int	j;
 
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	total_len = s1_len + s2_len + 1;
-	cat_str = (char *)malloc(sizeof(*cat_str) * total_len);
-	if (cat_str)
+	if (s1 && s2)
 	{
-		i = 0;
-		while (i < s1_len)
+		total_len = ft_strlen(s1) + ft_strlen(s2);
+		cat_str = (char *)malloc(sizeof(*cat_str) * total_len + 1);
+		if (cat_str)
 		{
-			cat_str[i] = s1[i];
-			i++;
+			i = 0;
+			while (i < ft_strlen(s1))
+			{
+				cat_str[i] = s1[i];
+				i++;
+			}
+			i = 0;
+			j = ft_strlen(s1);
+			while (i < ft_strlen(s2) && j < total_len)
+			{
+				cat_str[j] = s2[i];
+				j++;
+				i++;
+			}
+			cat_str[j] = '\0';
+			return (cat_str);
 		}
-		i = 0;
-		while (i < s2_len && s1_len < total_len)
-		{
-			cat_str[s1_len] = s2[i];
-			s1_len++;
-			i++;
-		}
-		cat_str[s1_len] = '\0';
-		return (cat_str);
 	}
-	else
-		return (NULL);
+	return (NULL);
 }

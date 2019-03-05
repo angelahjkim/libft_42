@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 23:00:08 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/25 23:26:33 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 21:46:17 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void		ft_putnbr_fd(int n, int fd)
 			write(fd, "2", 1);
 			n = 147483648;
 		}
-		if (n / 10)
-			ft_putnbr_fd(n / 10, fd);
 	}
-	digit = n % 10 + '0';
+	if (n / 10)
+		ft_putnbr_fd(n / 10, fd);
+	digit = (n % 10) + '0';
 	write(fd, &digit, 1);
 }

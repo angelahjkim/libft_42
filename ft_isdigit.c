@@ -6,13 +6,13 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 18:17:47 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/24 21:48:50 by angkim           ###   ########.fr       */
+/*   Updated: 2019/02/28 19:46:32 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isdigit(int c)
 {
-	if ((unsigned char)c >= '0' && (unsigned char)c <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);

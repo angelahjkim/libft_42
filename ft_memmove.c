@@ -5,41 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/20 13:31:16 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/26 15:35:27 by angkim           ###   ########.fr       */
+/*   Created: 2019/02/26 23:24:35 by angkim            #+#    #+#             */
+/*   Updated: 2019/02/28 19:14:14 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** copy byte string. take care of memory overlapping.
+** copies len bytes from string src to dst. The two strings may overlap;
+** the copy is always done in a non-destructive manner.
+** accounting for overlap: if src addr is lower than dst addr, copy from end
+** if src addr is higher, copy forwards.
 */
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, void const *src, size_t len)
 {
-	char			*csrc;
-	char			*cdst;
-	void			*tmp;
-	char			*ctmp;
-	unsigned int	i;
-	
-	csrc = (char *)src;
-	cdst = (char *)dst;
-	tmp = NULL;
-	tmp = ft_memset(tmp, 0, len);
-	ctmp = (char *)tmp;
+	unsigned char	*csrc;
+	unsigned char	*cdst;
+	size_t			i;
+
+	csrc = (unsigned char *)src;
+	cdst = (unsigned char *)dst;
 	i = 0;
-	while (i < len)
+	if (csrc < cdst)
 	{
-		ctmp[i] = csrc[i];
-		i++;
+		while (++i <= len)
+			cdst[len - i] = csrc[len - i];
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		cdst[i] = ctmp[i];
-		i++;
+		while (len-- > 0)
+			*(cdst++) = *(csrc++);
 	}
 	return (dst);
 }

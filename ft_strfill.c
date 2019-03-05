@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_fill_strarray.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 14:41:50 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 11:32:08 by angkim           ###   ########.fr       */
+/*   Created: 2019/03/04 17:01:54 by angkim            #+#    #+#             */
+/*   Updated: 2019/03/04 17:05:18 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
-** takes the address of string as a parameter and frees the memory of the string
-** then sets it ptr to NULL
+** fills s1 with a substring from s2 specified from start and end positions
 */
 
-void	ft_strdel(char **as)
+char	*ft_strfill(char *s1, const char *s2, int start, int end)
 {
-	if (as)
+	int i;
+
+	i = 0;
+	while (start < end)
 	{
-		free(*as);
-		*as = 0;
+		s1[i] = s2[start];
+		i++;
+		start++;
 	}
+	s1[i] = '\0';
+	return (s1);
 }

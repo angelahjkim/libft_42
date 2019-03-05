@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 22:52:32 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/24 23:50:16 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 19:46:46 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,48 @@ static int	is_blank(char c)
 		return (0);
 }
 
+static int	find_start(char *s)
+{
+	size_t i;
+
+	i = 0;
+	while (*s && is_blank(s[i]) && i < ft_strlen((const char *)s))
+		i++;
+	return (i);
+}
+
+static int	find_end(char *s)
+{
+	size_t i;
+
+	i = ft_strlen((const char *)s) - 1;
+	while (*s && is_blank(s[i]))
+	{
+		if (i == 0)
+			return (0);
+		i--;
+	}
+	return (i);
+}
+
 char		*ft_strtrim(char const *s)
 {
-	char			*str_cpy;
-	unsigned int	len;
-	unsigned int	i;
-	int				j;
+	char	*t_str;
 
-	len = ft_strlen(s) - 1;
-	while (is_blank(s[len]))
-		len -= is_blank(s[len]);
-	i = 0;
-	while (is_blank(s[i]))
-		i++;
-	str_cpy = (char *)malloc(sizeof(*str_cpy) * (len + 1 - i) + 1);
-	if (str_cpy)
+	if (s)
 	{
-		j = 0;
-		while (i < len + 1)
+		size_t start;
+		size_t end;
+
+		start = find_start((char *)s);
+		end = find_end((char *)s);
+		if (end == 0)
 		{
-			str_cpy[j] = s[i];
-			i++;
-			j++;
+			t_str = ft_strnew(1);
+			return (t_str);
 		}
-		str_cpy[j] = '\0';
-		return (str_cpy);
+		t_str = ft_strsub(s, find_start((char *)s), end - start + 1);
+		return (t_str);
 	}
-	return (NULL);
+	return (0);
 }

@@ -6,22 +6,24 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 17:03:35 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/23 17:30:56 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 12:12:45 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* lexicographical comparison between s1 and s2 up to n characters or NT
+** returns 1 if strings are equal, 0 if not
+*/
+
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	unsigned int i;
-
-	i = 0;
-	while (s1[i] && s2[i] && (i < n))
+	if (s1 && s2)
 	{
-		if (s1[i] != s2[i])
+		if (!ft_strncmp(s1, s2, n))
+			return (1);
+		else
 			return (0);
-		i++;
 	}
-	return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 14:51:55 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/23 14:56:58 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 11:33:45 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@
 
 void	ft_strclr(char *s)
 {
-	int len;
+	size_t len;
 
-	len = ft_strlen(s);
-	while (len--)
+	if (s)
 	{
-		*s = '\0';
-		s++;
+		len = ft_strlen(s);
+		while (len--)
+		{
+			*s = '\0';
+			s++;
+		}
 	}
 }
