@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 17:54:05 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/28 19:26:18 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 22:14:46 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	is_whitespace(char c)
 		return (0);
 }
 
-int		ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	unsigned int num;
 	unsigned int sign;

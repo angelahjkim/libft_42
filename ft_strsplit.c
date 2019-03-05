@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 23:40:29 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 20:01:47 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/05 15:23:14 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	word_count(char const *s, char c)
 	return (count);
 }
 
-static char *fill_strarray(char *array, const char *s, int start, int end)
+static char	*fill_strarray(char *array, const char *s, int start, int end)
 {
 	int i;
 

@@ -6,13 +6,13 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 16:55:11 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 12:12:16 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 22:21:50 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* 
+/*
 ** lexicographical comparison between s1 and s2
 ** return 1 if the strings are equal, 0 otherwise
 */

@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 16:55:22 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 20:00:03 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 22:16:12 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 ** takes and allocates memory to an array of strings from the length of words
 ** from a string taken as argument; returns string array with allocated memory.
-** word is defined as a set of characters delimited by the character taken as 
+** word is defined as a set of characters delimited by the character taken as
 ** argument.
 */
 

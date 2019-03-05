@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 22:52:32 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 19:46:46 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/04 22:20:13 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,11 @@ static int	find_end(char *s)
 char		*ft_strtrim(char const *s)
 {
 	char	*t_str;
+	size_t	start;
+	size_t	end;
 
 	if (s)
 	{
-		size_t start;
-		size_t end;
-
 		start = find_start((char *)s);
 		end = find_end((char *)s);
 		if (end == 0)
