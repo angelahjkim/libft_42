@@ -6,16 +6,16 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 20:25:25 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 11:25:24 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/08 14:57:34 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** allocates and returns a 'fresh' memory area initialized to 0
-** if allocation fails, return NULL. size_t is the maximum size that can be
-** allocated by malloc, sizeof(size_t) will return 0 to that max.
+** Allocates (with malloc(3)) and returns a “fresh” memory area.
+** The memory allocated is initialized to 0.
+** If the allocation fails, the function returns NULL.
 */
 
 void	*ft_memalloc(size_t size)

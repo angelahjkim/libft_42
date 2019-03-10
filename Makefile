@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: angkim <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: angkim <angkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/03/08 14:31:29 by angkim           ###   ########.fr        #
+#    Updated: 2019/03/10 15:06:31 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,8 +73,10 @@ SRCS = ft_memset.c \
 	   ft_lstiter.c \
 	   ft_lstmap.c \
 	   ft_wordcount.c \
-	   ft_memalloc_newarray.c \
-	   ft_memalloc_strarray.c \
+	   ft_wordlen.c \
+	   ft_digitcount.c \
+	   ft_strrev.c \
+	   ft_nbrtostr.c \
 	   ft_strfill.c \
 	   ft_print_strarray.c
 

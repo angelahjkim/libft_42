@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 23:03:27 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/05 15:01:35 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 15:06:33 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,12 @@ void	ft_putnbr_fd(int n, int fd);
 */
 
 t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem));
+
 
 /*
 ** *****************************************************************************
@@ -113,10 +119,13 @@ t_list	*ft_lstnew(void const *content, size_t content_size);
 */
 
 int		ft_wordcount(char const *s, char c);
-char	**ft_memalloc_newarray(char **array, char const *s, char c);
-char	**ft_memalloc_strarray(char **array, const char *s, char c);
+int		ft_wordlen(char const *s, char c);
+int		ft_digitcount(int n);
+char	*ft_strrev(char *s, int len);
+char	*ft_nbrtostr(char *s, int n, int len);
+char	**ft_mem_newarray(char **aptr, size_t size);
 char	*ft_strfill(char *s1, const char *s2, int start, int end);
-void	ft_print_strarray(char **array, int len);
+void	ft_print_strarray(char **array, int size);
 
 
 #endif

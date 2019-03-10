@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 17:54:05 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 22:14:46 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/08 15:25:52 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int			ft_atoi(const char *str)
 	unsigned int sign;
 
 	sign = 1;
-	while (ft_isalnum(*str + 0) == 0)
+	num = 0;
+	while (!ft_isalnum(*str + 0))
 	{
 		if (*str == '-' && ft_isdigit(*(str + 1)))
 		{
@@ -39,16 +40,10 @@ int			ft_atoi(const char *str)
 		else
 			return (0);
 	}
-	num = 0;
-	while (*str)
+	while (ft_isdigit(*str + 0))
 	{
-		while (ft_isdigit(*str + 0))
-		{
-			num = num * 10 + (*str - 48);
-			str++;
-		}
-		if (ft_isdigit(*str + 0) == 0)
-			return (num * sign);
+		num = num * 10 + (*str - 48);
+		str++;
 	}
 	return (num * sign);
 }
