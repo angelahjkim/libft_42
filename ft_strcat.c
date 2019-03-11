@@ -3,20 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 18:31:32 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/19 20:42:13 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 19:15:05 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Appends a copy of the null-terminated string s2 to the end of the
+** nul-terminated string s1, then adds a terminating '\0'. The string s1 must
+** have sufficient space to hold the result. The source and destination strings
+** should not overlap. Returns the pointer s1.
+*/
 
 char	*ft_strcat(char *s1, const char *s2)
 {
 	int i;
 	int j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = ft_strlen(s1);
 	j = 0;
 	while (s2[j])

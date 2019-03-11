@@ -6,11 +6,11 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/10 15:05:26 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 15:07:06 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 15:30:15 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_wordlen(char const *s, char c)
+int		ft_wordlen(char const *s, char c)
 {
 	int i;
 

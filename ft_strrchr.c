@@ -3,32 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 09:15:39 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 22:18:58 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 20:54:16 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** locate last occurence of c in the string
-** return pointer to located character, or NULL if character is not in string
+** Locates the last occurrence of c (converted to a char) in the string
+** pointed to by s. Nul-terminating character inclusive. Returns a pointer to
+** the located character or NULL if the character does not appear in s.
 */
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		len;
+	int	len;
 
-	len = ft_strlen(s) - 1;
-	if ((unsigned char)c == '\0')
-		len = ft_strlen(s);
-	while (len >= 0)
+	len = ft_strlen(s);
+	while (len)
 	{
 		if (*(s + len) == (unsigned char)c)
 			return ((char *)s + len);
 		len--;
 	}
-	return (0);
+	return (NULL);
 }

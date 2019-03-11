@@ -3,33 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 23:49:46 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/26 19:56:37 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 15:40:38 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** fill a buffer with character int c. returns the first argument (void *b).
-** cast the memory into unsigned chars.
-** you cannot access the buffer with dereferencing (*b_copy) because it is a
-** void pointer.
+** write len bytes of value c (converted to an unsigned char) to the string b.
+** returns pointer to b.
 */
 
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*b_copy;
-	unsigned int	i;
+	unsigned char	*b_cpy;
 
-	b_copy = (unsigned char *)b;
-	i = 0;
-	while (i < len)
+	b_cpy = (unsigned char *)b;
+	while (len--)
 	{
-		b_copy[i] = c;
-		i++;
+		*b_cpy = c;
+		b_cpy++;
 	}
 	return (b);
 }

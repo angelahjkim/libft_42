@@ -3,46 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 18:54:33 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/22 20:33:16 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 20:22:01 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** https://svnweb.freebsd.org/base/stable/7/lib/libc/string/strlcat.c?revision
-**	=172506&view=markup
-** https://www.sudo.ws/todd/papers/strlcpy.html
+** Appends string src to the end of dst. Takes the full size of the destination
+** buffer and guarantees nul-termination if there is room (room for the NUL
+** should be included in dstsize). Appends at most dstsize - strlen(dst) - 1
+** characters. Then, nul-terminates, unless dstsize is 0 or the original
+** dst string was longer than dstsize (should only occur if dstsize is
+** incorrect or dst is not a proper string). Returns total length of the string
+** it tried to create (intial length of dst + length of src).
 */
 
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*d;
-	char	*s;
-	size_t	rem_size;
-	size_t	dlen;
+	char		*dcpy;
+	const char	*scpy;
+	size_t		rem_size;
+	size_t		dlen;
 
-	d = (char *)dst;
-	s = (char *)src;
+	dcpy = dst;
+	scpy = src;
 	rem_size = dstsize;
-	while (rem_size-- != 0 && *d != '\0')
-		d++;
-	dlen = d - dst;
+	while (rem_size-- && *dcpy)
+		dcpy++;
+	dlen = dcpy - dst;
 	rem_size = dstsize - dlen;
-	if (rem_size == 0)
-		return (dlen + ft_strlen(s));
-	while (*s != '\0')
+	if (!rem_size)
+		return (dlen + ft_strlen(scpy));
+	while (*scpy)
 	{
 		if (rem_size-- != 1)
 		{
-			*d = *s;
-			d++;
+			*dcpy = *scpy;
+			dcpy++;
 		}
-		s++;
+		scpy++;
 	}
-	*d = '\0';
-	return (dlen + (s - src));
+	*dcpy = '\0';
+	return (dlen + (scpy - src));
 }

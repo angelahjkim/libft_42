@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 18:00:10 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/19 18:23:32 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 19:09:56 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Copies at most len characters from src to dst. If src is less than len
+** characters long, the remainder of dst is filled with '\0' characters.
+** Otherwise, dst does not terminate.
+*/
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
@@ -25,13 +31,10 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		i++;
 		j++;
 	}
-	if (src[i] == '\0')
+	while (j < len)
 	{
-		while (j < len)
-		{
-			dst[j] = '\0';
-			j++;
-		}
+		dst[j] = '\0';
+		j++;
 	}
 	return (dst);
 }

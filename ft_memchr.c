@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 17:55:36 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/24 22:19:33 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 15:56:58 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** https://svnweb.freebsd.org/base/stable/7/lib/libc/string/memchr.c?view=markup
+** Locates the first occurrence of c (converted to an unsigned char)
+** in string s.
 */
 
 void	*ft_memchr(const void *s, int c, size_t n)

@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:48:44 by angkim            #+#    #+#             */
-/*   Updated: 2019/02/19 17:59:17 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/10 17:38:48 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Copies the string src to dst (including the terminating '\0' character).
+** The source and destination strings should not overlap. Returns dst.
+*/
 
 char	*ft_strcpy(char *dst, const char *src)
 {
@@ -22,7 +27,6 @@ char	*ft_strcpy(char *dst, const char *src)
 		dst[i] = src[i];
 		i++;
 	}
-	if (src[i] == '\0')
-		dst[i] = '\0';
+	dst[i] = '\0';
 	return (dst);
 }
