@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 18:54:33 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 20:22:01 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 15:31:40 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (dlen + ft_strlen(scpy));
 	while (*scpy)
 	{
-		if (rem_size-- != 1)
+		if (rem_size != 1)
 		{
 			*dcpy = *scpy;
 			dcpy++;
