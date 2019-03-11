@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 09:15:39 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 20:54:16 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 15:52:15 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 	int	len;
 
 	len = ft_strlen(s);
-	while (len)
+	while (len >= 0)
 	{
 		if (*(s + len) == (unsigned char)c)
 			return ((char *)s + len);
