@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 16:17:38 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 12:01:03 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 09:49:54 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** takes a str and function ptr as args and applies ptrs function to each
-** char of str to create a 'fresh' new string (malloc) with the result of
-** the applications of f. returns new string. ASSUMMING NUL char included.
+** Applies the function f to each character of the string given as argument to
+** create a “fresh” new string (with malloc) resulting from the successive
+** applications of f.
 */
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*new_str;
-	size_t	i;
+	int		i;
 
-	if (s)
+	if (s && f)
 	{
-		new_str = (char *)malloc(ft_strlen(s) + 1);
+		new_str = (char *)ft_memalloc(ft_strlen(s) + 1);
 		if (new_str)
 		{
 			i = 0;
-			while (*s)
+			while (s[i])
 			{
-				new_str[i] = f(*s);
+				new_str[i] = f(s[i]);
 				i++;
 				s++;
 			}
@@ -39,5 +39,5 @@ char	*ft_strmap(char const *s, char (*f)(char))
 			return (new_str);
 		}
 	}
-	return (0);
+	return (NULL);
 }
