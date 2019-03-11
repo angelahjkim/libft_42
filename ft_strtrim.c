@@ -3,70 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 22:52:32 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 22:20:13 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 11:01:10 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** takes a str and returns a copy of the str without any whitespaces in the
-** beginning or end of the str. whitepaces: ' ', '\n', '\t'.
-** if allocation fails, return NULL.
+** Allocates (with malloc(3)) and returns a copy of the string given as argument
+** without whitespaces at the beginning or at the end of the string. Will be
+** considered as whitespaces the following characters ’ ’, ’\n’ and ’\t’. If s
+** has no whitespaces at the beginning or at the end, the function returns a
+** copy of s. If the allocation fails the function returns NULL.
 */
 
-static int	is_blank(char c)
-{
-	if (c == ' ' || c == '\n' || c == '\t')
-		return (1);
-	else
-		return (0);
-}
-
-static int	find_start(char *s)
-{
-	size_t i;
-
-	i = 0;
-	while (*s && is_blank(s[i]) && i < ft_strlen((const char *)s))
-		i++;
-	return (i);
-}
-
-static int	find_end(char *s)
-{
-	size_t i;
-
-	i = ft_strlen((const char *)s) - 1;
-	while (*s && is_blank(s[i]))
-	{
-		if (i == 0)
-			return (0);
-		i--;
-	}
-	return (i);
-}
+#include <stdio.h>	// delete
 
 char		*ft_strtrim(char const *s)
 {
 	char	*t_str;
-	size_t	start;
-	size_t	end;
+	int		start;
+	int		end;
 
-	if (s)
+	if (!s)
+		return (NULL);
+	start = 0;
+	while (ft_iswhitespace(s[start]))
+		start++;
+printf("start: %d\n", start);
+	end = ft_strlen(s) - 1;
+	while (ft_iswhitespace(s[end]))
+		end--;
+printf("end: %d\n", end);
+	if (end < 0)
 	{
-		start = find_start((char *)s);
-		end = find_end((char *)s);
-		if (end == 0)
-		{
-			t_str = ft_strnew(1);
-			return (t_str);
-		}
-		t_str = ft_strsub(s, find_start((char *)s), end - start + 1);
+		t_str = (char *)ft_memalloc(1);
+		t_str[0] = '\0';
 		return (t_str);
 	}
-	return (0);
+	t_str = (char *)ft_memalloc(end - start + 1);
+	if (!t_str)
+		return (NULL);
+	t_str = ft_strsub(s, start, end - start + 1);
+	return (t_str);
 }
