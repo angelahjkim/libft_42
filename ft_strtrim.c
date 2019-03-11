@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 22:52:32 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 11:01:10 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 11:13:30 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 ** copy of s. If the allocation fails the function returns NULL.
 */
 
-#include <stdio.h>	// delete
-
 char		*ft_strtrim(char const *s)
 {
 	char	*t_str;
@@ -33,11 +31,9 @@ char		*ft_strtrim(char const *s)
 	start = 0;
 	while (ft_iswhitespace(s[start]))
 		start++;
-printf("start: %d\n", start);
 	end = ft_strlen(s) - 1;
 	while (ft_iswhitespace(s[end]))
 		end--;
-printf("end: %d\n", end);
 	if (end < 0)
 	{
 		t_str = (char *)ft_memalloc(1);
