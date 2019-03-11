@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 18:13:24 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 15:23:31 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 11:41:07 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,18 @@ char		*ft_itoa(int n)
 	len = ft_digitcount(n);
 	if (n == -2147483648)
 		return (ft_itoa_min(n, len));
-	i_str = (char *)malloc(sizeof(char) * len + 1);
+	i_str = (char *)malloc(len + 1);
+	if (!i_str)
+		return (NULL);
 	neg = 0;
-	if (i_str)
+	if (n < 0)
 	{
-		if (n < 0)
-		{
-			n *= -1;
-			neg = 1;
-		}
-		i_str = ft_nbrtostr(i_str, n, len);
-		i_str = ft_strrev(i_str, len - 1);
-		if (neg)
-			i_str[0] = '-';
-		return (i_str);
+		n *= -1;
+		neg = 1;
 	}
-	return (0);
+	i_str = ft_nbrtostr(i_str, n, len);
+	i_str = ft_strrev(i_str, len - 1);
+	if (neg)
+		i_str[0] = '-';
+	return (i_str);
 }
