@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 21:42:36 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 15:33:06 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 10:16:52 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,16 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*cat_str;
-	unsigned int	total_len;
-	unsigned int	i;
-	unsigned int	j;
+	char	*cat_str;
+	size_t	total_len;
 
-	if (s1 && s2)
-	{
-		total_len = ft_strlen(s1) + ft_strlen(s2);
-		cat_str = (char *)malloc(sizeof(*cat_str) * total_len + 1);
-		if (cat_str)
-		{
-			i = 0;
-			while (i < ft_strlen(s1))
-			{
-				cat_str[i] = s1[i];
-				i++;
-			}
-			i = 0;
-			j = ft_strlen(s1);
-			while (i < ft_strlen(s2) && j < total_len)
-			{
-				cat_str[j] = s2[i];
-				j++;
-				i++;
-			}
-			cat_str[j] = '\0';
-			return (cat_str);
-		}
-	}
-	return (NULL);
+	if (!s1 || !s2)
+		return (NULL);
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	cat_str = (char *)malloc(total_len + 1);
+	if (!cat_str)
+		return (NULL);
+	ft_strcat(cat_str, s1);
+	ft_strcat(cat_str, s2);
+	return (cat_str);
 }
