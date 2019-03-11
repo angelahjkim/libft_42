@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 21:42:36 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 10:16:52 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 14:55:55 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	total_len = ft_strlen(s1) + ft_strlen(s2);
-	cat_str = (char *)malloc(total_len + 1);
+	cat_str = (char *)ft_memalloc(total_len + 1);
 	if (!cat_str)
 		return (NULL);
-	ft_strcat(cat_str, s1);
+	ft_strcpy(cat_str, s1);
 	ft_strcat(cat_str, s2);
 	return (cat_str);
 }
