@@ -3,39 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 21:25:28 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 10:40:17 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 08:44:51 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** lexicographically compare not more than n chars in NT strings s1 and s2
-** return an integer >, =, <, or 0 depending on diff in values of s1 to s2.
+** Lexicographically compares the NT strings s1 and s2. Compares not more than
+** n characters. Characters that appear after a \0 are not compared. Comparison
+** is done using unsigned characters. Returns an integer greater than, equal to,
+** or less than 0, according to the difference in value between s1 and s2.
 */
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	*c_s1;
-	unsigned char	*c_s2;
-	size_t			i;
+	size_t i;
 
-	c_s1 = (unsigned char *)s1;
-	c_s2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
-	{
-		if (c_s1[i] == '\0')
-			return (-c_s2[i]);
-		else if (c_s2[i] == '\0')
-			return (c_s1[i]);
-		else if (c_s1[i] != c_s2[i])
-			return (c_s1[i] - c_s2[i]);
-		else
-			i++;
-	}
-	return (0);
+	if (!s1 || !s2 || !n)
+		return (0);
+	while (s1[i] == s2[i] && s1[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

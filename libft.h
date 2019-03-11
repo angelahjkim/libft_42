@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 23:03:27 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 15:06:33 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 09:13:20 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,12 +118,12 @@ t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem));
 ** *****************************************************************************
 */
 
+int		ft_iswhitespace(char c);
 int		ft_wordcount(char const *s, char c);
 int		ft_wordlen(char const *s, char c);
 int		ft_digitcount(int n);
 char	*ft_strrev(char *s, int len);
 char	*ft_nbrtostr(char *s, int n, int len);
-char	**ft_mem_newarray(char **aptr, size_t size);
 char	*ft_strfill(char *s1, const char *s2, int start, int end);
 void	ft_print_strarray(char **array, int size);
 

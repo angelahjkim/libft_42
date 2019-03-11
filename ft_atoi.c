@@ -3,47 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 17:54:05 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/08 15:25:52 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 09:02:40 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_whitespace(char c)
-{
-	if (c == ' ' || c == '\t' || c == '\v' || c == '\f' || c == '\r' ||
-			c == '\n')
-		return (1);
-	else
-		return (0);
-}
+/*
+** Converts the initial portion of the string pointed to by str to int
+** representation.
+*/
 
-int			ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	unsigned int num;
-	unsigned int sign;
+	int i;
+	int num;
+	int sign;
 
-	sign = 1;
+	i = 0;
 	num = 0;
-	while (!ft_isalnum(*str + 0))
+	sign = 1;
+	while (ft_iswhitespace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (*str == '-' && ft_isdigit(*(str + 1)))
-		{
+		if (str[i] == '-')
 			sign = -1;
-			str++;
-		}
-		else if (is_whitespace(*str + 0))
-			str++;
-		else
-			return (0);
+		i++;
 	}
-	while (ft_isdigit(*str + 0))
+	while (ft_isdigit((char)str[i]))
 	{
-		num = num * 10 + (*str - 48);
-		str++;
+		num = num * 10 + str[i] - '0';
+		i++;
 	}
 	return (num * sign);
 }

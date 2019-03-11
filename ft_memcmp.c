@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 18:15:19 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 16:12:50 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 08:58:12 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*cs1;
 	unsigned char	*cs2;
 
-	if (n == 0 || cs1 == cs2)
+	if (n == 0 || s1 == s2)
 		return (0);
 	cs1 = (unsigned char *)s1;
 	cs2 = (unsigned char *)s2;

@@ -6,7 +6,7 @@
 #    By: angkim <angkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/03/10 15:06:31 by angkim           ###   ########.fr        #
+#    Updated: 2019/03/11 08:48:50 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ SRCS = ft_memset.c \
 	   ft_lstadd.c \
 	   ft_lstiter.c \
 	   ft_lstmap.c \
+	   ft_iswhitespace.c \
 	   ft_wordcount.c \
 	   ft_wordlen.c \
 	   ft_digitcount.c \
