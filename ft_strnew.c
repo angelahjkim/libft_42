@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 13:46:49 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 09:35:50 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 09:38:14 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnew(size_t size)
 {
 	char *new;
 
-	new = (char *)ft_malloc(size + 1);
+	new = (char *)ft_memalloc(size + 1);
 	if (new)
 		return (new);
 	else
