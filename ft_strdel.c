@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 14:41:50 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 11:32:08 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 09:40:12 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** takes the address of string as a parameter and frees the memory of the string
-** then sets it ptr to NULL
+** Takes as a parameter the address of a string that need to be freed with
+** free, then sets its pointer to NULL.
 */
 
 void	ft_strdel(char **as)
 {
-	if (as)
+	if (as && *as)
 	{
 		free(*as);
-		*as = 0;
+		*as = NULL;
 	}
 }
