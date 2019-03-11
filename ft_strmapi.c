@@ -3,37 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 16:41:34 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 12:03:36 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 09:52:18 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** takes a str and a function ptr as args. creates a 'fresh' string (malloc)
-** resulting from the successive application of f to str. returns new str.
-** assuming NUL char inclusive.
+** Applies the function f to each character of the string passed as argument by
+** giving its index as first argument to create a “fresh” new string
+** (with malloc) resulting from the successive applications of f.
 */
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*new_str;
-	size_t	i;
+	int		i;
 
-	if (s)
+	if (s && f)
 	{
 		new_str = (char *)malloc(ft_strlen(s) + 1);
 		if (new_str)
 		{
 			i = 0;
-			while (*s)
+			while (s[i])
 			{
-				new_str[i] = f(i, *s);
+				new_str[i] = f(i, s[i]);
 				i++;
-				s++;
 			}
 			new_str[i] = '\0';
 		}

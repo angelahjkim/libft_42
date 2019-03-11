@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 16:17:38 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 09:49:54 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 09:52:40 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ char	*ft_strmap(char const *s, char (*f)(char))
 			{
 				new_str[i] = f(s[i]);
 				i++;
-				s++;
 			}
 			new_str[i] = '\0';
 			return (new_str);
