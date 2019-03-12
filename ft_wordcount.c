@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 16:52:15 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/04 19:54:04 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 13:00:43 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int		ft_wordcount(char const *s, char c)
 		if (*s != c)
 		{
 			count++;
-			while (*s != c)
+			while (*s != c && *s)
 				s++;
+			if (!(*s))
+				return (count);
 		}
 		s++;
 	}
