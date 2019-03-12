@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 18:31:32 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 19:15:05 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 21:53:05 by angela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 ** should not overlap. Returns the pointer s1.
 */
 
+#include <stdio.h>	// delete
+
 char	*ft_strcat(char *s1, const char *s2)
 {
 	int i;
 	int j;
 
-	if (!s1 || !s2)
-		return (NULL);
 	i = ft_strlen(s1);
 	j = 0;
 	while (s2[j])
