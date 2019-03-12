@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 18:31:32 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 21:53:05 by angela           ###   ########.fr       */
+/*   Updated: 2019/03/11 22:42:47 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 ** have sufficient space to hold the result. The source and destination strings
 ** should not overlap. Returns the pointer s1.
 */
-
-#include <stdio.h>	// delete
 
 char	*ft_strcat(char *s1, const char *s2)
 {

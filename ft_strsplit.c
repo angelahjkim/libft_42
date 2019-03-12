@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 23:40:29 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 15:31:06 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 09:24:58 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ char		**ft_strsplit(char const *s, char c)
 		while (*s && *s == c)
 			s++;
 		end = ft_wordlen(s, c);
-		word_array[i] = ft_strsub(s, 0, end);
+		if (!(word_array[i] = ft_strsub(s, 0, end)))
+			return (NULL);
 		s += end;
 		i++;
 	}
