@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 22:52:32 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 11:13:30 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 12:33:36 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ char		*ft_strtrim(char const *s)
 		start++;
 	end = ft_strlen(s) - 1;
 	while (ft_iswhitespace(s[end]))
-		end--;
-	if (end < 0)
 	{
-		t_str = (char *)ft_memalloc(1);
-		t_str[0] = '\0';
-		return (t_str);
+		end--;
+		if (end < 0)
+		{
+			t_str = (char *)ft_memalloc(1);
+			t_str[0] = '\0';
+			return (t_str);
+		}
 	}
 	t_str = (char *)ft_memalloc(end - start + 1);
 	if (!t_str)

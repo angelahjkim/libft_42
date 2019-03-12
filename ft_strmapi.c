@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 16:41:34 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 09:52:18 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 12:25:02 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s && f)
 	{
-		new_str = (char *)malloc(ft_strlen(s) + 1);
+		new_str = (char *)ft_memalloc(ft_strlen(s) + 1);
 		if (new_str)
 		{
 			i = 0;
