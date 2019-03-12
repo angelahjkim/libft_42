@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 20:30:43 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 19:39:47 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/11 21:53:40 by angela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	unsigned int i;
 	unsigned int j;
 
-	if (!s1 || !s2)
-		return (NULL);
 	i = ft_strlen(s1);
 	j = 0;
 	while (j < n && s2[j])
