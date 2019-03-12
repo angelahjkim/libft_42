@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 17:31:18 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 10:03:22 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 11:22:23 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 ** Allocates (with malloc(3)) and returns a “fresh” substring from the string
-** given as argument. The substring begins at indexstart and is of size len. 
+** given as argument. The substring begins at indexstart and is of size len.
 ** If start and len aren’t refering to a valid substring, the behavior is
 ** undefined. If the allocation fails, the function returns NULL.
 */
@@ -24,17 +24,16 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char			*sub_str;
 	unsigned int	i;
 
-	sub_str = (char *)ft_memalloc(len + 1);
-	if (s && sub_str)
+	sub_str = ft_strnew(len);
+	if (!s || !sub_str)
+		return (NULL);
+	i = 0;
+	while (len && s[start])
 	{
-		i = 0;
-		while (len--)
-		{
-			sub_str[i] = s[start + i];
-			i++;
-		}
-		sub_str[i] = '\0';
-		return (sub_str);
+		sub_str[i] = s[start + i];
+		i++;
+		len--;
 	}
-	return (NULL);
+	sub_str[i] = '\0';
+	return (sub_str);
 }

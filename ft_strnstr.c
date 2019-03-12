@@ -6,35 +6,33 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 09:49:52 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 22:48:02 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 09:51:55 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** locate the first occ of NT str needle in NT str haystack
+** locate the first occ of NT str s_find in NT str s
 ** not more than len characters are searched; chars after \0 not searched
-** returns haystack if needle empty, ptr to first occ in haystack, or NULL
+** returns s if s_find empty, ptr to first occ in s_find, or NULL
 */
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *s, const char *s_find, size_t len)
 {
 	size_t i;
 	size_t j;
 
-	if (!*needle)
-		return ((char *)haystack);
+	if (!*s_find)
+		return ((char *)s);
 	i = 0;
-	while (haystack[i])
+	while (s[i])
 	{
 		j = 0;
-		while (*(needle + j) == *(haystack + i + j) && i + j < len && needle[j])
-		{
+		while (*(s_find + j) == *(s + i + j) && i + j < len && s_find[j])
 			j++;
-		}
-		if (!*(needle + j))
-			return ((char *)(haystack + i));
+		if (!*(s_find + j))
+			return ((char *)(s + i));
 		i++;
 	}
 	return (NULL);

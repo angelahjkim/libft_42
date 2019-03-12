@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 18:13:24 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/12 01:02:20 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 11:17:36 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ char		*ft_itoa(int n)
 
 	num = n;
 	len = ft_digitcount(num);
-//	i_str = (char *)ft_memalloc(len + 1);
-	if (!(i_str = ft_memalloc(len + 1)))
+	if (!(i_str = (char *)ft_memalloc(len + 1)))
 		return (NULL);
 	neg = 0;
 	if (n < 0)

@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 23:40:29 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/12 09:24:58 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 11:38:07 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 ** If the allocation fails the function returns NULL.
 */
 
+#include <stdio.h>
+
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**word_array;
@@ -27,7 +29,7 @@ char		**ft_strsplit(char const *s, char c)
 	int		end;
 
 	array_size = ft_wordcount(s, c);
-	if (!(word_array = (char **)ft_memalloc(sizeof(char *) * array_size + 1)))
+	if (!(word_array = (char **)ft_memalloc(sizeof(char *) * (array_size + 1))))
 		return (NULL);
 	i = 0;
 	while (i < array_size)

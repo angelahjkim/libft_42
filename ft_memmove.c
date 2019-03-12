@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 23:24:35 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 15:55:21 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 09:33:27 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	*ft_memmove(void *dst, void const *src, size_t len)
 
 	csrc = (unsigned char *)src;
 	cdst = (unsigned char *)dst;
-
 	if (csrc < cdst)
 		while (len--)
 			cdst[len] = csrc[len];
