@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtonum.c                                      :+:      :+:    :+:   */
+/*   ft_nbrtostr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/08 16:15:57 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/08 16:19:38 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 00:32:45 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ** digit of the number.
 */
 
-char	*ft_nbrtostr(char *s, int n, int len)
+char	*ft_nbrtostr(char *s, long n, int len)
 {
 	int i;
 
