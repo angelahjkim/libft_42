@@ -6,7 +6,7 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 21:25:28 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/11 21:56:16 by angela           ###   ########.fr       */
+/*   Updated: 2019/03/11 23:14:02 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
 
+	if (!n)
+		return (0);
 	i = 0;
 	while ((s1[i] == s2[i]) && s1[i] && (i < n - 1))
 		i++;
