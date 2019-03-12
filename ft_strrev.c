@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/08 16:10:22 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/08 16:11:11 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 12:13:54 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,12 @@ char	*ft_strrev(char *s, int len)
 	char	tmp;
 
 	i = 0;
-	if (*s == '0' && *(s + 1) == '\0')
-		return (s);
-	while (i < len)
+	while (i < len / 2)
 	{
 		tmp = s[i];
-		s[i] = s[len];
-		s[len] = tmp;
+		s[i] = s[len - 1 - i];
+		s[len - 1 - i] = tmp;
 		i++;
-		len--;
 	}
 	return (s);
 }

@@ -6,11 +6,11 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/08 16:07:42 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/10 15:24:06 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/12 11:53:27 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_digitcount(int n)
+int		ft_digitcount(long n)
 {
 	int count;
 
