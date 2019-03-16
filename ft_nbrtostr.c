@@ -6,12 +6,12 @@
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/08 16:15:57 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/12 11:59:48 by angkim           ###   ########.fr       */
+/*   Updated: 2019/03/16 08:19:52 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Takes a number and returns a string containing the ascii values for each
+** Takes an integer and returns a string containing the ascii values for each
 ** digit of the number.
 */
 
@@ -34,7 +34,6 @@ char	*ft_nbrtostr(char *s, long n, int len)
 			s[i] = n % 10 + '0';
 		n /= 10;
 		i++;
-		s[i] = '\0';
 	}
 	return (s);
 }
