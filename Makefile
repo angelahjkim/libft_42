@@ -6,13 +6,13 @@
 #    By: angkim <angkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/03/12 00:22:47 by angkim           ###   ########.fr        #
+#    Updated: 2019/03/16 09:06:31 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 SRCS = ft_memset.c \
 	   ft_bzero.c \
@@ -76,9 +76,6 @@ SRCS = ft_memset.c \
 	   ft_wordcount.c \
 	   ft_wordlen.c \
 	   ft_digitcount.c \
-	   ft_strrev.c \
-	   ft_nbrtostr.c \
-	   ft_strfill.c \
 	   ft_print_strarray.c
 
 OBJS = $(SRCS:%.c=%.o)
