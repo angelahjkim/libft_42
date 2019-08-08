@@ -6,13 +6,13 @@
 #    By: angkim <angkim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/18 21:20:28 by angkim            #+#    #+#              #
-#    Updated: 2019/03/16 09:06:31 by angkim           ###   ########.fr        #
+#    Updated: 2019/08/07 20:27:06 by angkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 
 SRCS = ft_memset.c \
 	   ft_bzero.c \
@@ -58,6 +58,8 @@ SRCS = ft_memset.c \
 	   ft_strtrim.c \
 	   ft_strsplit.c \
 	   ft_itoa.c \
+	   ft_hextoa.c \
+	   ft_octaltoa.c \
 	   ft_putchar.c \
 	   ft_putstr.c \
 	   ft_putendl.c \
@@ -66,6 +68,9 @@ SRCS = ft_memset.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c \
+	   ft_puthex.c \
+	   ft_puthex_long.c \
+	   ft_putoctal.c \
 	   ft_lstnew.c \
 	   ft_lstdelone.c \
 	   ft_lstdel.c \
@@ -83,14 +88,16 @@ OBJS = $(SRCS:%.c=%.o)
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAGS) -c $(SRCS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@gcc $(CFLAGS) -c $(SRCS)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 clean:
-	rm -f $(OBJS) 
+	@rm -f $(OBJS) 
 
 fclean: clean
-	rm $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all 
+
+.PHONY: all clean fclean re

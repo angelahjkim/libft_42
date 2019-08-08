@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/08 16:10:22 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/16 07:39:39 by angkim           ###   ########.fr       */
+/*   Created: 2019/08/07 13:47:24 by angkim            #+#    #+#             */
+/*   Updated: 2019/08/07 16:17:06 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrev(char *s, int len)
-{
-	int		i;
-	char	tmp;
+#include "libft.h"
 
-	i = 0;
-	while (i < len / 2)
-	{
-		tmp = s[i];
-		s[i] = s[len - 1 - i];
-		s[len - 1 - i] = tmp;
-		i++;
-	}
-	return (s);
+void	ft_puthex(int n)
+{
+	char	hex_digits[] = "0123456789abcdef";
+	
+	if (n >= 16)
+		ft_puthex(n / 16);
+	write(1, &hex_digits[n % 16], 1);
 }

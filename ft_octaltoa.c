@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrtostr.c                                      :+:      :+:    :+:   */
+/*   ft_octaltoa.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angkim <angkim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/08 16:15:57 by angkim            #+#    #+#             */
-/*   Updated: 2019/03/16 08:19:52 by angkim           ###   ########.fr       */
+/*   Created: 2019/08/07 20:28:13 by angkim            #+#    #+#             */
+/*   Updated: 2019/08/07 20:28:40 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Takes an integer and returns a string containing the ascii values for each
-** digit of the number.
-*/
+#include "libft.h"
 
-char	*ft_nbrtostr(char *s, long n, int len)
+char	*ft_octaltoa(int nbr)
 {
-	int i;
 
-	i = 0;
-	if (n == 0)
-	{
-		s[0] = '0';
-		s[1] = '\0';
-		return (s);
-	}
-	while (i < len)
-	{
-		if (n % 10 == 0 && n != 0)
-			s[i] = '0';
-		if (n % 10)
-			s[i] = n % 10 + '0';
-		n /= 10;
-		i++;
-	}
-	return (s);
+}
+
+// for testing
+#include <stdio.h>
+int main(void)
+{
+	
 }
